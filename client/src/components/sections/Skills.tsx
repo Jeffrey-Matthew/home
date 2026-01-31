@@ -1,25 +1,26 @@
+import type { Skill } from '../../types';
 import './Skills.css';
 
-const businessSkills = [
-    { name: 'Requirements Gathering', level: 'expert' },
-    { name: 'Process Mapping', level: 'expert' },
-    { name: 'Stakeholder Management', level: 'advanced' },
-    { name: 'Data Analysis', level: 'advanced' },
-    { name: 'User Story Writing', level: 'expert' },
-    { name: 'Agile/Scrum', level: 'advanced' },
-    { name: 'SQL & Reporting', level: 'advanced' },
-    { name: 'Business Process Improvement', level: 'expert' },
+const businessSkills: Skill[] = [
+    { name: 'Requirements Gathering', level: 'expert', category: 'business' },
+    { name: 'Process Mapping', level: 'expert', category: 'business' },
+    { name: 'Stakeholder Management', level: 'advanced', category: 'business' },
+    { name: 'Data Analysis', level: 'advanced', category: 'business' },
+    { name: 'User Story Writing', level: 'expert', category: 'business' },
+    { name: 'Agile/Scrum', level: 'advanced', category: 'business' },
+    { name: 'SQL & Reporting', level: 'advanced', category: 'business' },
+    { name: 'Business Process Improvement', level: 'expert', category: 'business' },
 ];
 
-const techSkills = [
-    { name: 'TypeScript', level: 'advanced' },
-    { name: 'React', level: 'advanced' },
-    { name: 'Node.js', level: 'intermediate' },
-    { name: 'Python', level: 'advanced' },
-    { name: 'SQL/PostgreSQL', level: 'advanced' },
-    { name: 'Git', level: 'advanced' },
-    { name: 'REST APIs', level: 'advanced' },
-    { name: 'HTML/CSS', level: 'advanced' },
+const techSkills: Skill[] = [
+    { name: 'TypeScript', level: 'advanced', category: 'technical' },
+    { name: 'React', level: 'advanced', category: 'technical' },
+    { name: 'Node.js', level: 'intermediate', category: 'technical' },
+    { name: 'Python', level: 'advanced', category: 'technical' },
+    { name: 'SQL/PostgreSQL', level: 'advanced', category: 'technical' },
+    { name: 'Git', level: 'advanced', category: 'technical' },
+    { name: 'REST APIs', level: 'advanced', category: 'technical' },
+    { name: 'HTML/CSS', level: 'advanced', category: 'technical' },
 ];
 
 const getLevelColor = (level: string) => {

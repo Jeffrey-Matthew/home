@@ -1,8 +1,18 @@
-# Executed Commands
+# Project Commands
 
-## Project Setup
-- `npx -y create-vite@latest client --template react-ts`
-- `cd client && npm install @supabase/supabase-js`
-- `rm client/src/App.css`
-- `cd client && npm run build`
-- `cd client && npm install -D vite@^5.4.11 @vitejs/plugin-react@^4.3.1`
+## Setup
+To install all dependencies (root, client, and server):
+```bash
+npm run install:all
+```
+
+## Development
+To start both client and server simultaneously:
+```bash
+npm run dev
+```
+
+## Structure
+- `root`: Orchestration
+- `client/`: Frontend (Vite)
+- `server/`: Backend (Express)

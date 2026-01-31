@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuthContext } from './context/AuthContext';
+import { ErrorProvider } from './context/ErrorContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
@@ -26,20 +27,25 @@ const ProtectedRoute = ({ children }: { children: React.ReactNode }) => {
 const AppLayout = () => {
   return (
     <div className="app-layout">
+      <a href="#main-content" className="skip-link">
+        Skip to content
+      </a>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route
-          path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
-        />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <main id="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );
@@ -48,9 +54,11 @@ const AppLayout = () => {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppLayout />
-      </AuthProvider>
+      <ErrorProvider>
+        <AuthProvider>
+          <AppLayout />
+        </AuthProvider>
+      </ErrorProvider>
     </BrowserRouter>
   );
 }

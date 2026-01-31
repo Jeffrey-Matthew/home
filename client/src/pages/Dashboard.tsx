@@ -1,8 +1,13 @@
 import { useAuthContext } from '../context/AuthContext';
+import projectsData from '../data/projects.json';
+import type { Project } from '../types';
 import './Dashboard.css';
 
 export const Dashboard = () => {
     const { user, logout } = useAuthContext();
+    const projects = projectsData.projects as Project[];
+    const totalProjects = projects.length;
+    const featuredProjects = projects.filter(p => p.featured).length;
 
     return (
         <main className="dashboard-page">
@@ -31,11 +36,11 @@ export const Dashboard = () => {
                         <h3>📊 Quick Stats</h3>
                         <div className="stat-row">
                             <span className="stat-label">Total Projects</span>
-                            <span className="stat-value">4</span>
+                            <span className="stat-value">{totalProjects}</span>
                         </div>
                         <div className="stat-row">
                             <span className="stat-label">Featured</span>
-                            <span className="stat-value">2</span>
+                            <span className="stat-value">{featuredProjects}</span>
                         </div>
                     </div>
 

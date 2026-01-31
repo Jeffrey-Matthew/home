@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import { supabase } from '../supabase';
+import { useError } from '../context/ErrorContext';
 import type { Session, User } from '@supabase/supabase-js';
 
 export const useAuth = () => {
     const [session, setSession] = useState<Session | null>(null);
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
+    const { showError } = useError();
 
     useEffect(() => {
         // Get initial session
@@ -34,9 +36,9 @@ export const useAuth = () => {
             if (error) throw error;
         } catch (error) {
             if (error instanceof Error) {
-                alert(error.message);
+                showError(error.message);
             } else {
-                alert('An unknown error occurred');
+                showError('An unknown error occurred');
             }
         }
     };
