@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { ErrorProvider } from './context/ErrorContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { Dashboard } from './pages/Dashboard';
 import { AdminLogin } from './pages/AdminLogin';
+import { NotFound } from './pages/NotFound';
 import { ProtectedAdminRoute } from './components/common/ProtectedAdminRoute';
 import './index.css';
 
@@ -32,7 +33,7 @@ const AppLayout = () => {
               </ProtectedAdminRoute>
             }
           />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />

@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
 
-const ADMIN_EMAIL = 'jeffenz3110@gmail.com';
+const ADMIN_EMAIL = import.meta.env.VITE_ADMIN_EMAIL;
 
 interface ProtectedAdminRouteProps {
     children: React.ReactNode;
