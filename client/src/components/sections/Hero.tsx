@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 export const Hero = () => {
@@ -27,10 +28,10 @@ export const Hero = () => {
                 </p>
 
                 <div className="hero-cta">
-                    <a href="#projects" className="btn btn-primary btn-lg">
+                    <Link to="/projects" className="btn btn-primary btn-lg">
                         View My Work
                         <span className="btn-arrow">→</span>
-                    </a>
+                    </Link>
                     <a href="#about" className="btn btn-secondary btn-lg">
                         Learn More
                     </a>
