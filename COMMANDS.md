@@ -14,5 +14,9 @@ npm run dev
 
 ## Structure
 - `root`: Orchestration
+- `cd client && npm install -D vite@^5.4.11 @vitejs/plugin-react@^4.3.1`
 - `client/`: Frontend (Vite)
 - `server/`: Backend (Express)
+
+## Deployment
+- `git add -A && git commit -m "..." && git push` (code already pushed)
