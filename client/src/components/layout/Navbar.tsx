@@ -5,7 +5,7 @@ import { ThemeToggle } from '../common/ThemeToggle';
 import './Navbar.css';
 
 export const Navbar = () => {
-    const { user, login, logout, loading } = useAuthContext();
+    const { user, logout } = useAuthContext();
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
@@ -61,9 +61,7 @@ export const Navbar = () => {
                         <ThemeToggle />
 
                         <div className="nav-auth">
-                            {loading ? (
-                                <span className="auth-loading">...</span>
-                            ) : user ? (
+                            {user && (
                                 <div className="user-menu">
                                     <img
                                         src={user.user_metadata?.avatar_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23374151"/><text x="50" y="55" font-size="40" fill="%23fff" text-anchor="middle" dominant-baseline="middle">👤</text></svg>'}
@@ -74,10 +72,6 @@ export const Navbar = () => {
                                         Sign Out
                                     </button>
                                 </div>
-                            ) : (
-                                <button className="btn btn-primary" onClick={login}>
-                                    Sign In
-                                </button>
                             )}
                         </div>
                     </div>

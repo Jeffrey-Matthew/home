@@ -7,6 +7,7 @@ import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import { Projects } from './pages/Projects';
 import { Dashboard } from './pages/Dashboard';
+import { AdminLogin } from './pages/AdminLogin';
 import { ProtectedAdminRoute } from './components/common/ProtectedAdminRoute';
 import './index.css';
 
@@ -22,6 +23,7 @@ const AppLayout = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/admin" element={<AdminLogin />} />
           <Route
             path="/dashboard"
             element={
