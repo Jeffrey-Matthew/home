@@ -83,21 +83,6 @@ export const Skills = () => {
                         </div>
                     </div>
                 </div>
-
-                <div className="skills-legend">
-                    <span className="legend-item">
-                        <span className="legend-dot" style={{ background: 'var(--accent-color)' }}></span>
-                        Expert
-                    </span>
-                    <span className="legend-item">
-                        <span className="legend-dot" style={{ background: 'var(--primary-color)' }}></span>
-                        Advanced
-                    </span>
-                    <span className="legend-item">
-                        <span className="legend-dot" style={{ background: 'var(--secondary-color)' }}></span>
-                        Intermediate
-                    </span>
-                </div>
             </div>
         </section>
     );

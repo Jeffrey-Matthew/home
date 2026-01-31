@@ -20,8 +20,7 @@ export const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-brand">
-                    <img src="/logo.png" alt="J.M.Studio Logo" className="brand-logo" />
-                    <span className="brand-text">J.M.Studio</span>
+                    <span className="brand-text">Jeffrey Matthew</span>
                 </Link>
 
                 <button
