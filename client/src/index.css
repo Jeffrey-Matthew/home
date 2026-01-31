@@ -22,7 +22,7 @@
 }
 
 :root {
-  /* Colors */
+  /* Colors - Dark Theme (Default) */
   --bg-color: #0d1117;
   --text-color: #c9d1d9;
   --text-muted: #8b949e;
@@ -32,6 +32,7 @@
   --error-color: #da3633;
   --card-bg: #161b22;
   --border-color: #30363d;
+  --navbar-bg: rgba(13, 17, 23, 0.85);
 
   /* Typography */
   --font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -61,6 +62,20 @@
   --transition-fast: 150ms ease;
   --transition-base: 200ms ease;
   --transition-slow: 300ms ease;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-color: #f0f9ff;
+  --text-color: #0f172a;
+  --text-muted: #475569;
+  --primary-color: #2563eb;
+  --secondary-color: #3b82f6;
+  --accent-color: #16a34a;
+  --error-color: #dc2626;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --navbar-bg: rgba(240, 249, 255, 0.85);
 }
 
 /* ============================================

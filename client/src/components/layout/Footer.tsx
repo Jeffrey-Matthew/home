@@ -14,8 +14,8 @@ export const Footer = () => {
             <div className="footer-container">
                 <div className="footer-content">
                     <div className="footer-brand">
-                        <span className="brand-icon">◆</span>
-                        <span>Business Analyst & Developer</span>
+                        <img src="/logo.png" alt="J.M.Studio Logo" className="footer-logo" />
+                        <span>J.M.Studio</span>
                     </div>
 
                     <div className="footer-links">
@@ -37,7 +37,7 @@ export const Footer = () => {
 
                 <div className="footer-bottom">
                     <p className="copyright">
-                        © {currentYear} Portfolio. Built with React & TypeScript.
+                        © {currentYear} J.M.Studio. Built with React & TypeScript.
                     </p>
                 </div>
             </div>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
+import { ThemeToggle } from '../common/ThemeToggle';
 import './Navbar.css';
 
 export const Navbar = () => {
@@ -19,8 +20,8 @@ export const Navbar = () => {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-brand">
-                    <span className="brand-icon">◆</span>
-                    <span className="brand-text">Portfolio</span>
+                    <img src="/logo.png" alt="J.M.Studio Logo" className="brand-logo" />
+                    <span className="brand-text">J.M.Studio</span>
                 </Link>
 
                 <button
@@ -57,25 +58,29 @@ export const Navbar = () => {
                         )}
                     </ul>
 
-                    <div className="nav-auth">
-                        {loading ? (
-                            <span className="auth-loading">...</span>
-                        ) : user ? (
-                            <div className="user-menu">
-                                <img
-                                    src={user.user_metadata?.avatar_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23374151"/><text x="50" y="55" font-size="40" fill="%23fff" text-anchor="middle" dominant-baseline="middle">👤</text></svg>'}
-                                    alt="Profile"
-                                    className="user-avatar"
-                                />
-                                <button className="btn btn-secondary" onClick={logout}>
-                                    Sign Out
+                    <div className="nav-actions">
+                        <ThemeToggle />
+
+                        <div className="nav-auth">
+                            {loading ? (
+                                <span className="auth-loading">...</span>
+                            ) : user ? (
+                                <div className="user-menu">
+                                    <img
+                                        src={user.user_metadata?.avatar_url || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23374151"/><text x="50" y="55" font-size="40" fill="%23fff" text-anchor="middle" dominant-baseline="middle">👤</text></svg>'}
+                                        alt="Profile"
+                                        className="user-avatar"
+                                    />
+                                    <button className="btn btn-secondary" onClick={logout}>
+                                        Sign Out
+                                    </button>
+                                </div>
+                            ) : (
+                                <button className="btn btn-primary" onClick={login}>
+                                    Sign In
                                 </button>
-                            </div>
-                        ) : (
-                            <button className="btn btn-primary" onClick={login}>
-                                Sign In
-                            </button>
-                        )}
+                            )}
+                        </div>
                     </div>
                 </div>
             </div>

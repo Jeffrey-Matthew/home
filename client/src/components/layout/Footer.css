@@ -27,6 +27,12 @@
     font-weight: 500;
 }
 
+.footer-logo {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+}
+
 .footer-brand .brand-icon {
     color: var(--primary-color);
     font-size: 1.25rem;
@@ -50,7 +56,7 @@
 
 .social-link:hover {
     color: var(--primary-color);
-    background: rgba(88, 166, 255, 0.1);
+    background: color-mix(in srgb, var(--primary-color) 10%, transparent);
 }
 
 .social-icon {

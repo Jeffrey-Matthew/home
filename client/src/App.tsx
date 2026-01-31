@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuthContext } from './context/AuthContext';
 import { ErrorProvider } from './context/ErrorContext';
+import { ThemeProvider } from './context/ThemeContext';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
@@ -54,11 +55,13 @@ const AppLayout = () => {
 function App() {
   return (
     <BrowserRouter>
-      <ErrorProvider>
-        <AuthProvider>
-          <AppLayout />
-        </AuthProvider>
-      </ErrorProvider>
+      <ThemeProvider>
+        <ErrorProvider>
+          <AuthProvider>
+            <AppLayout />
+          </AuthProvider>
+        </ErrorProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }
