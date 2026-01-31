@@ -161,6 +161,7 @@
         right: 0;
         bottom: 0;
         background: var(--bg-color);
+        z-index: 999;
         flex-direction: column;
         padding: var(--space-8);
         gap: var(--space-8);

@@ -64,7 +64,7 @@ export const About = () => {
                             </div>
                             <pre className="visual-code">
                                 {`{
-  "name": "Your Name",
+  "name": "Jeffrey Matthew",
   "title": [
     "Business Analyst",
     "Software Developer"
