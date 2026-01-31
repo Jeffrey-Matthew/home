@@ -1,0 +1,89 @@
+{
+    "projects": [
+        {
+            "id": "process-automation",
+            "title": "Process Automation Suite",
+            "description": "Automated manual reporting workflows, reducing processing time by 60% and eliminating human errors.",
+            "longDescription": "Led the analysis and development of an end-to-end automation solution for the finance team's monthly reporting process.",
+            "tags": [
+                "Python",
+                "Automation",
+                "Excel VBA",
+                "Process Optimization"
+            ],
+            "category": "hybrid",
+            "metrics": [
+                {
+                    "label": "Time Saved",
+                    "value": "60%"
+                },
+                {
+                    "label": "Users Impacted",
+                    "value": "50+"
+                },
+                {
+                    "label": "Reports Automated",
+                    "value": "12"
+                }
+            ],
+            "featured": true
+        },
+        {
+            "id": "dashboard-app",
+            "title": "Executive Dashboard",
+            "description": "Real-time KPI dashboard providing stakeholders with actionable business insights at a glance.",
+            "tags": [
+                "React",
+                "TypeScript",
+                "D3.js",
+                "Data Visualization"
+            ],
+            "category": "development",
+            "metrics": [
+                {
+                    "label": "Daily Users",
+                    "value": "200+"
+                },
+                {
+                    "label": "Decision Time",
+                    "value": "-40%"
+                }
+            ],
+            "featured": true
+        },
+        {
+            "id": "requirements-tracker",
+            "title": "Requirements Management System",
+            "description": "Custom-built solution to track, prioritize, and trace requirements across project lifecycles.",
+            "tags": [
+                "Node.js",
+                "PostgreSQL",
+                "Requirements Engineering"
+            ],
+            "category": "hybrid",
+            "metrics": [
+                {
+                    "label": "Projects Managed",
+                    "value": "15"
+                },
+                {
+                    "label": "Requirements Tracked",
+                    "value": "500+"
+                }
+            ],
+            "featured": false
+        },
+        {
+            "id": "api-integration",
+            "title": "Third-Party API Integration",
+            "description": "Seamless integration of payment and CRM APIs to streamline customer data flow.",
+            "tags": [
+                "REST APIs",
+                "TypeScript",
+                "Integration"
+            ],
+            "category": "development",
+            "featured": false
+        }
+    ]
+}
