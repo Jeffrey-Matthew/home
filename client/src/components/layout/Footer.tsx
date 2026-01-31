@@ -5,7 +5,7 @@ export const Footer = () => {
 
     const socialLinks = [
         { name: 'GitHub', url: 'https://github.com/Jeffrey-Matthew', icon: '⌘' },
-        { name: 'LinkedIn', url: 'https://linkedin.com/in/jeffrey-matthew', icon: '◈' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jeffreymatthew/', icon: '◈' },
         { name: 'Email', url: 'mailto:jeffenz3110@gmail.com', icon: '✉' },
     ];
 
