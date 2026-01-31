@@ -11,11 +11,6 @@ export const Hero = () => {
             </div>
 
             <div className="hero-content">
-                <div className="hero-badge">
-                    <span className="badge-dot"></span>
-                    <span>Available for opportunities</span>
-                </div>
-
                 <h1 className="hero-title">
                     <span className="title-line">Business Analyst</span>
                     <span className="title-divider">×</span>
@@ -32,8 +27,8 @@ export const Hero = () => {
                         View My Work
                         <span className="btn-arrow">→</span>
                     </Link>
-                    <a href="#about" className="btn btn-secondary btn-lg">
-                        Learn More
+                    <a href="mailto:jeffenz3110@gmail.com" className="btn btn-secondary btn-lg">
+                        Contact Me
                     </a>
                 </div>
 
