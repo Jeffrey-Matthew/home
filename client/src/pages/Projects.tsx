@@ -28,7 +28,6 @@ export const Projects = () => {
         <main className="projects-page">
             <div className="section-container">
                 <header className="projects-header">
-                    <span className="section-tag">Portfolio</span>
                     <h1 className="section-title">My Projects</h1>
                     <p className="section-subtitle">
                         A collection of work showcasing both business analysis and development skills
