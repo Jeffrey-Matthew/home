@@ -6,6 +6,156 @@
     position: relative;
     overflow: hidden;
     padding: calc(64px + var(--space-12)) var(--space-6) var(--space-12);
+    background: radial-gradient(circle at center, rgba(20, 20, 20, 1) 0%, rgba(5, 5, 5, 1) 100%);
+}
+
+.hero-background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Subtle spotlight effect instead of messy orbs */
+.gradient-orb {
+    display: none;
+    /* Hide old orbs */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Typography Overhaul */
+.hero-title {
+    font-size: clamp(3.5rem, 10vw, 6rem);
+    /* Massive text */
+    font-weight: 800;
+    line-height: 1;
+    margin: 0 0 var(--space-8);
+    letter-spacing: -0.04em;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.title-line {
+    display: block;
+}
+
+.title-divider {
+    display: none;
+    /* Remove X divider */
+}
+
+.title-line.highlight {
+    background: linear-gradient(135deg, #fff 0%, #888 100%);
+    /* Metallic / White gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    opacity: 0.8;
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--text-muted);
+    line-height: 1.5;
+    max-width: 600px;
+    font-weight: 400;
+    margin: 0 auto var(--space-12);
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--space-6);
+    justify-content: center;
+    margin-bottom: var(--space-16);
+}
+
+/* Button Polish */
+.btn-lg {
+    padding: var(--space-4) var(--space-8);
+    font-size: var(--font-size-lg);
+    border-radius: 100px;
+    /* Pill shape */
+}
+
+.hero-cta .btn-primary {
+    background: var(--text-color);
+    color: var(--bg-color);
+    font-weight: 600;
+    border: none;
+}
+
+.hero-cta .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.hero-cta .btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-color);
+}
+
+.hero-cta .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--text-color);
+}
+
+
+.hero-stats {
+    display: flex;
+    gap: var(--space-16);
+    padding: var(--space-8);
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.stat {
+    align-items: center;
+}
+
+.stat-value {
+    font-size: var(--font-size-3xl);
+    font-weight: 800;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: var(--font-size-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: var(--space-2);
+}
+
+.stat-divider {
+    width: 1px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .hero-stats {
+        flex-direction: column;
+        /* Stack stats on mobile */
+        gap: var(--space-8);
+    }
+
+    .stat-divider {
+        display: none;
+    }
 }
 
 .hero-background {

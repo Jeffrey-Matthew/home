@@ -13,7 +13,6 @@ export const Hero = () => {
             <div className="hero-content">
                 <h1 className="hero-title">
                     <span className="title-line">Business Analyst</span>
-                    <span className="title-divider">×</span>
                     <span className="title-line highlight">Software Developer</span>
                 </h1>
 
