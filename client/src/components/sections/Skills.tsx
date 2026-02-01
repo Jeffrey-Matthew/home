@@ -37,11 +37,7 @@ export const Skills = () => {
         <section className="skills">
             <div className="section-container">
                 <div className="skills-header">
-                    <span className="section-tag">Skills</span>
                     <h2 className="section-title">Tools of the Trade</h2>
-                    <p className="section-subtitle">
-                        A blend of business acumen and technical expertise
-                    </p>
                 </div>
 
                 <div className="skills-grid">
