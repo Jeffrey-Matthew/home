@@ -57,7 +57,7 @@
     align-items: flex-start;
     gap: var(--space-4);
     padding: var(--space-4);
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     transition: all var(--transition-base);
@@ -92,14 +92,13 @@
 }
 
 .visual-card {
-    background: #000;
-    /* Deep black for code editor */
+    background: var(--card-bg);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
     width: 100%;
     max-width: 400px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
 
 .visual-header {

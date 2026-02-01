@@ -4,12 +4,9 @@
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(5, 5, 5, 0.5);
-    /* Semi-transparent black */
-    backdrop-filter: blur(20px);
-    /* Heavy blur */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    /* Subtle border */
+    background: var(--navbar-bg);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
     transition: background-color var(--transition-base);
 }
 
@@ -77,17 +74,16 @@
     font-weight: 500;
     padding: var(--space-2) var(--space-3);
     border-radius: 6px;
-    transition: color var(--transition-base);
+    transition: all var(--transition-base);
 }
 
 .nav-link:hover {
     color: var(--text-color);
-    background: transparent;
-    /* Remove background on hover for cleaner look */
+    background: color-mix(in srgb, var(--primary-color) 10%, transparent);
 }
 
 .nav-link.active {
-    color: var(--text-color);
+    color: var(--primary-color);
 }
 
 .nav-auth {
