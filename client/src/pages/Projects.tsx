@@ -1,14 +1,13 @@
 import { useState } from 'react';
 import { ProjectCard } from '../components/sections/ProjectCard';
-import projectsData from '../data/projects.json';
-import type { Project } from '../types';
+import { useProjects } from '../hooks/useProjects';
 import './Projects.css';
 
-type CategoryFilter = 'all' | 'business-analysis' | 'development' | 'hybrid';
+type CategoryFilter = 'all' | 'business' | 'development' | 'hybrid';
 
 export const Projects = () => {
     const [filter, setFilter] = useState<CategoryFilter>('all');
-    const projects = projectsData.projects as Project[];
+    const { projects, loading } = useProjects();
 
     const filteredProjects = filter === 'all'
         ? projects
@@ -17,9 +16,13 @@ export const Projects = () => {
     const filters: { value: CategoryFilter; label: string }[] = [
         { value: 'all', label: 'All Projects' },
         { value: 'hybrid', label: 'BA + Dev' },
-        { value: 'business-analysis', label: 'Business Analysis' },
+        { value: 'business', label: 'Business Analysis' },
         { value: 'development', label: 'Development' },
     ];
+
+    if (loading) {
+        return <div className="loading-page">Loading projects...</div>;
+    }
 
     return (
         <main className="projects-page">

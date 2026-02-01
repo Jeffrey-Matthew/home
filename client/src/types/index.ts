@@ -12,20 +12,13 @@ export interface Project {
     id: string;
     title: string;
     description: string;
-    longDescription?: string;
+    image_url: string;
     tags: string[];
-    category: 'business-analysis' | 'development' | 'hybrid';
-    metrics?: {
-        label: string;
-        value: string;
-    }[];
-    links?: {
-        github?: string;
-        demo?: string;
-        caseStudy?: string;
-    };
-    image?: string;
+    category: 'business' | 'development' | 'hybrid';
+    link?: string;
+    github_url?: string;
     featured?: boolean;
+    created_at?: string;
 }
 
 export interface Skill {
