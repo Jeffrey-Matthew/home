@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import type { Project } from '../../types';
 import './ProjectCard.css';
 
@@ -36,7 +37,9 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
                 {project.featured && <span className="featured-badge">Featured</span>}
             </div>
 
-            <h3 className="project-title">{project.title}</h3>
+            <Link to={`/projects/${project.id}`} className="project-title-link">
+                <h3 className="project-title">{project.title}</h3>
+            </Link>
             <p className="project-description">{project.description}</p>
 
             <div className="project-tags">

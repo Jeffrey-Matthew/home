@@ -45,7 +45,11 @@ export const ProjectForm = ({ initialData, onSave, onCancel }: ProjectFormProps)
             onSave();
         } catch (error) {
             console.error(error);
-            alert('Error saving project');
+            if (error instanceof Error) {
+                alert(`Error saving project: ${error.message}`);
+            } else {
+                alert('Error saving project');
+            }
         } finally {
             setSubmitting(false);
         }
@@ -208,6 +212,20 @@ export const ProjectForm = ({ initialData, onSave, onCancel }: ProjectFormProps)
                 <button type="button" className="btn btn-secondary" onClick={onCancel} disabled={isLoading}>
                     Cancel
                 </button>
+            </div>
+
+            {/* Debug Section */}
+            <div style={{ marginTop: '2rem', padding: '1rem', background: '#000', color: '#0f0', borderRadius: '4px', fontSize: '0.8rem', overflow: 'auto' }}>
+                <p><strong>Debug Info:</strong></p>
+                <p>Status: {submitting ? 'Submitting...' : 'Idle'}</p>
+                <p>Env Checks:</p>
+                <ul>
+                    <li>URL Configured: {import.meta.env.VITE_SUPABASE_URL ? 'YES' : 'NO'}</li>
+                    <li>Key Configured: {import.meta.env.VITE_SUPABASE_ANON_KEY ? 'YES' : 'NO'}</li>
+                    <li>Email Configured: {import.meta.env.VITE_ADMIN_EMAIL ? 'YES' : 'NO'}</li>
+                </ul>
+                <p>Form Data Preview:</p>
+                <pre>{JSON.stringify(formData, null, 2)}</pre>
             </div>
         </form>
     );
