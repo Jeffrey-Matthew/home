@@ -25,7 +25,7 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
                 return 'light';
             }
         }
-        return 'dark';
+        return 'light'; // Forced light mode default
     });
 
     useEffect(() => {

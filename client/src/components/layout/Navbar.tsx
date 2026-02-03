@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuthContext } from '../../context/AuthContext';
-import { ThemeToggle } from '../common/ThemeToggle';
+// import { ThemeToggle } from '../common/ThemeToggle';
 import './Navbar.css';
 
 export const Navbar = () => {
@@ -59,7 +59,7 @@ export const Navbar = () => {
                     </ul>
 
                     <div className="nav-actions">
-                        <ThemeToggle />
+                        {/* <ThemeToggle /> */}
 
                         <div className="nav-auth">
                             {user && (
