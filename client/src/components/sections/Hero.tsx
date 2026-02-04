@@ -12,14 +12,14 @@ export const Hero = () => {
 
             <div className="hero-content">
                 <h1 className="hero-title">
-                    <span className="title-line">Business Analyst</span>
+                    <span className="title-line">Technical Business Analyst</span>
                     <span className="title-divider">×</span>
-                    <span className="title-line highlight">Software Developer</span>
+                    <span className="title-line highlight">Software Engineer</span>
                 </h1>
 
                 <p className="hero-subtitle">
-                    Bridging the gap between business needs and technical solutions.
-                    I analyze problems with a business mindset and solve them with code.
+                    The translator between abstract business strategy and concrete technical implementation.
+                    I build products that solve real problems.
                 </p>
 
                 <div className="hero-cta">
