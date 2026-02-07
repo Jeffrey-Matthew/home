@@ -1,6 +1,33 @@
 import './About.css';
 
+import { useState } from 'react';
+import './About.css';
+
+const quotes = [
+    { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+    { text: "Java is to JavaScript what car is to Carpet.", author: "Chris Heilmann" },
+    { text: "It’s not a bug; it’s an undocumented feature.", author: "Anonymous" },
+    { text: "Simplicity is the soul of efficiency.", author: "Austin Freeman" },
+    { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
+    { text: "Fix the cause, not the symptom.", author: "Steve Maguire" },
+    { text: "Optimism is an occupational hazard of programming: feedback is the treatment.", author: "Kent Beck" },
+    { text: "Make it work, make it right, make it fast.", author: "Kent Beck" },
+    { text: "Software is a great combination between artistry and engineering.", author: "Bill Gates" },
+    { text: "The best way to predict the future is to invent it.", author: "Alan Kay" }
+];
+
 export const About = () => {
+    const [isFlipped, setIsFlipped] = useState(false);
+    const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+    const handleProfileClick = () => {
+        if (!isFlipped) {
+            // Pick a new random quote when flipping to the back
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            setCurrentQuoteIndex(randomIndex);
+        }
+        setIsFlipped(!isFlipped);
+    };
     return (
         <section id="about" className="about">
             <div className="section-container">
@@ -62,12 +89,26 @@ export const About = () => {
                                 </div>
                                 <span className="visual-title">profile.json</span>
                             </div>
-                            <div className="profile-image-container">
-                                <img
-                                    src="/profile.jpeg"
-                                    alt="Jeffrey Matthew"
-                                    className="profile-image"
-                                />
+                            <div
+                                className={`profile-flip-container ${isFlipped ? 'flipped' : ''}`}
+                                onClick={handleProfileClick}
+                            >
+                                <div className="profile-flip-inner">
+                                    <div className="profile-flip-front">
+                                        <img
+                                            src="/profile.jpeg"
+                                            alt="Jeffrey Matthew"
+                                            className="profile-image"
+                                        />
+                                        <div className="flip-hint">Click for inspiration ✨</div>
+                                    </div>
+                                    <div className="profile-flip-back">
+                                        <div className="quote-content">
+                                            <p className="quote-text">"{quotes[currentQuoteIndex].text}"</p>
+                                            <span className="quote-author">— {quotes[currentQuoteIndex].author}</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
