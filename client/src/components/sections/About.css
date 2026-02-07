@@ -94,19 +94,21 @@
 .visual-card {
     background: var(--card-bg);
     border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    border-radius: 16px;
+    padding: var(--space-4);
+    /* Reduced padding for image */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .visual-header {
     display: flex;
     align-items: center;
     gap: var(--space-4);
-    padding: var(--space-3) var(--space-4);
-    background: rgba(0, 0, 0, 0.1);
+    padding-bottom: var(--space-4);
+    margin-bottom: var(--space-4);
     border-bottom: 1px solid var(--border-color);
 }
 
@@ -116,8 +118,8 @@
 }
 
 .window-dots span {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
 }
 
@@ -134,18 +136,31 @@
 }
 
 .visual-title {
+    font-family: monospace;
     font-size: var(--font-size-sm);
     color: var(--text-muted);
 }
 
-.visual-code {
-    padding: var(--space-6);
-    margin: 0;
-    font-family: 'Fira Code', 'SF Mono', monospace;
-    font-size: var(--font-size-sm);
-    line-height: 1.8;
-    color: var(--text-color);
-    overflow-x: auto;
+.profile-image-container {
+    flex-grow: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    /* Aspect ratio fallback if image fails */
+    min-height: 300px;
+    background: var(--bg-color);
+}
+
+.profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform var(--transition-slow);
+}
+
+.visual-card:hover .profile-image {
+    transform: scale(1.05);
 }
 
 @media (max-width: 968px) {

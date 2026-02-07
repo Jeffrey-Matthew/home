@@ -62,18 +62,13 @@ export const About = () => {
                                 </div>
                                 <span className="visual-title">profile.json</span>
                             </div>
-                            <pre className="visual-code">
-                                {`{
-  "name": "Jeffrey Matthew",
-  "title": [
-    "Business Analyst",
-    "Software Developer"
-  ],
-  "passion": "Building solutions",
-  "approach": "User-first",
-  "coffee_dependency": true
-}`}
-                            </pre>
+                            <div className="profile-image-container">
+                                <img
+                                    src="/profile.jpeg"
+                                    alt="Jeffrey Matthew"
+                                    className="profile-image"
+                                />
+                            </div>
                         </div>
                     </div>
                 </div>
