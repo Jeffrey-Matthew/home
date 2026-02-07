@@ -18,19 +18,22 @@ export const Footer = () => {
                     </div>
 
                     <div className="footer-links">
-                        {socialLinks.map(({ name, url, icon }) => (
-                            <a
-                                key={name}
-                                href={url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="social-link"
-                                aria-label={name}
-                            >
-                                <span className="social-icon">{icon}</span>
-                                <span className="social-name">{name}</span>
-                            </a>
-                        ))}
+                        <a href="/projects" className="footer-link">Projects</a>
+                        <a href="mailto:jeffenz3110@gmail.com" className="footer-link">Contact</a>
+                        <div className="footer-socials">
+                            {socialLinks.map(({ name, url, icon }) => (
+                                <a
+                                    key={name}
+                                    href={url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="social-link"
+                                    aria-label={name}
+                                >
+                                    <span className="social-icon">{icon}</span>
+                                </a>
+                            ))}
+                        </div>
                     </div>
                 </div>
 

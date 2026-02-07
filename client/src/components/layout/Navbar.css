@@ -172,7 +172,8 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--bg-color);
+        background: rgba(5, 5, 5, 0.98);
+        /* High opacity for readability */
         z-index: 999;
         flex-direction: column;
         padding: var(--space-8);
