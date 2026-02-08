@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import type { Project, Category } from '../../types';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './ProjectCard.css';
 
 interface ProjectCardProps {
@@ -50,12 +51,12 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             <div className="project-links">
                 {project.github_url && (
                     <a href={project.github_url} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <span>⌘</span> Code
+                        <span className="icon"><FaGithub /></span> Code
                     </a>
                 )}
                 {project.link && (
                     <a href={project.link} target="_blank" rel="noopener noreferrer" className="project-link">
-                        <span>◈</span> Live Demo
+                        <span className="icon"><FaExternalLinkAlt /></span> Live Demo
                     </a>
                 )}
             </div>

@@ -1,12 +1,13 @@
 import './Footer.css';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
 
     const socialLinks = [
-        { name: 'GitHub', url: 'https://github.com/Jeffrey-Matthew', icon: '⌘' },
-        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jeffreymatthew/', icon: '◈' },
-        { name: 'Email', url: 'mailto:jeffenz3110@gmail.com', icon: '✉' },
+        { name: 'GitHub', url: 'https://github.com/Jeffrey-Matthew', icon: <FaGithub /> },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/jeffreymatthew/', icon: <FaLinkedin /> },
+        { name: 'Email', url: 'mailto:jeffenz3110@gmail.com', icon: <FaEnvelope /> },
     ];
 
     return (
