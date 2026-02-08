@@ -89,6 +89,8 @@
 .about-visual {
     display: flex;
     justify-content: center;
+    max-width: 550px;
+    /* Increased width for profile card */
 }
 
 .visual-card {
@@ -98,8 +100,10 @@
     padding: var(--space-4);
     /* Reduced padding for image */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    min-height: 500px;
-    /* Ensure card has minimum height for flip container */
+    min-height: 400px;
+    /* Reverted to 400px */
+    width: 100%;
+    /* Fill the about-visual container width */
     display: flex;
     flex-direction: column;
 }
