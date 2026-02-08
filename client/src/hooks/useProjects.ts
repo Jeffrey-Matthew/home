@@ -13,7 +13,10 @@ export const useProjects = () => {
             setLoading(true);
             const { data, error } = await supabase
                 .from('projects')
-                .select('*')
+                .select(`
+                    *,
+                    category:categories(id, name, slug, description)
+                `)
                 .order('created_at', { ascending: false });
 
             if (error) throw error;
@@ -27,11 +30,14 @@ export const useProjects = () => {
         }
     };
 
-    const addProject = async (project: Omit<Project, 'id' | 'created_at'>) => {
+    const addProject = async (project: Omit<Project, 'id' | 'created_at' | 'category'>) => {
         const { data, error } = await supabase
             .from('projects')
             .insert([project])
-            .select()
+            .select(`
+                *,
+                category:categories(id, name, slug, description)
+            `)
             .single();
 
         if (error) throw error;
@@ -44,7 +50,10 @@ export const useProjects = () => {
             .from('projects')
             .update(updates)
             .eq('id', id)
-            .select()
+            .select(`
+                *,
+                category:categories(id, name, slug, description)
+            `)
             .single();
 
         if (error) throw error;

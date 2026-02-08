@@ -8,13 +8,22 @@ export interface AuthContextType {
     logout: () => Promise<void>;
 }
 
+export interface Category {
+    id: string;
+    name: string;
+    slug: string;
+    description?: string;
+    created_at?: string;
+}
+
 export interface Project {
     id: string;
     title: string;
     description: string;
     image_url: string;
     tags: string[];
-    category: 'business' | 'development' | 'hybrid';
+    category_id: string;
+    category?: Category; // Optional joined data
     link?: string;
     github_url?: string;
     featured?: boolean;

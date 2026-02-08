@@ -52,8 +52,8 @@ export const ProjectDetails = () => {
                 <article className="project-details-content">
                     <header className="project-details-header">
                         <div className="project-meta-top">
-                            <span className={`project-category-badge ${project.category}`}>
-                                {project.category}
+                            <span className={`project-category-badge ${project.category?.slug || 'default'}`}>
+                                {project.category?.name || 'Uncategorized'}
                             </span>
                             {project.featured && <span className="featured-badge">Featured</span>}
                         </div>

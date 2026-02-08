@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import type { Project } from '../../types';
 import { useProjects } from '../../hooks/useProjects';
+import { useCategories } from '../../hooks/useCategories';
 
 interface ProjectFormProps {
     initialData?: Project;
@@ -10,13 +11,14 @@ interface ProjectFormProps {
 
 export const ProjectForm = ({ initialData, onSave, onCancel }: ProjectFormProps) => {
     const { addProject, updateProject, uploadImage, loading: hookLoading } = useProjects();
+    const { categories, loading: categoriesLoading } = useCategories();
     const [submitting, setSubmitting] = useState(false);
     const [formData, setFormData] = useState<Partial<Project>>({
         title: initialData?.title || '',
         description: initialData?.description || '',
         image_url: initialData?.image_url || '',
         tags: initialData?.tags || [],
-        category: initialData?.category || 'development',
+        category_id: initialData?.category_id || (categories[0]?.id || ''),
         link: initialData?.link || '',
         github_url: initialData?.github_url || '',
         featured: initialData?.featured || false
@@ -117,15 +119,23 @@ export const ProjectForm = ({ initialData, onSave, onCancel }: ProjectFormProps)
             </div>
 
             <div className="form-group">
-                <label>Category</label>
+                <label>Category *</label>
                 <select
-                    value={formData.category}
-                    onChange={e => setFormData({ ...formData, category: e.target.value as any })}
+                    value={formData.category_id}
+                    onChange={e => setFormData({ ...formData, category_id: e.target.value })}
+                    required
+                    disabled={categoriesLoading}
                     style={{ width: '100%', padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--bg-color)', color: 'var(--text-color)' }}
                 >
-                    <option value="development">Development</option>
-                    <option value="business">Business Analysis</option>
-                    <option value="hybrid">BA + Dev (Hybrid)</option>
+                    {categoriesLoading ? (
+                        <option>Loading categories...</option>
+                    ) : categories.length === 0 ? (
+                        <option>No categories available</option>
+                    ) : (
+                        categories.map(cat => (
+                            <option key={cat.id} value={cat.id}>{cat.name}</option>
+                        ))
+                    )}
                 </select>
             </div>
 

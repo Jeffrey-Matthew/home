@@ -1,24 +1,19 @@
 import { useState } from 'react';
 import { ProjectCard } from '../components/sections/ProjectCard';
 import { useProjects } from '../hooks/useProjects';
+import { useCategories } from '../hooks/useCategories';
 import './Projects.css';
 
-type CategoryFilter = 'all' | 'business' | 'development' | 'hybrid';
+
 
 export const Projects = () => {
-    const [filter, setFilter] = useState<CategoryFilter>('all');
+    const [filter, setFilter] = useState<string>('all');
     const { projects, loading } = useProjects();
+    const { categories, loading: categoriesLoading } = useCategories();
 
     const filteredProjects = filter === 'all'
         ? projects
-        : projects.filter(p => p.category === filter);
-
-    const filters: { value: CategoryFilter; label: string }[] = [
-        { value: 'all', label: 'All Projects' },
-        { value: 'hybrid', label: 'BA + Dev' },
-        { value: 'business', label: 'Business Analysis' },
-        { value: 'development', label: 'Development' },
-    ];
+        : projects.filter(p => p.category_id === filter);
 
     if (loading) {
         return <div className="loading-page">Loading projects...</div>;
@@ -35,15 +30,25 @@ export const Projects = () => {
                 </header>
 
                 <div className="projects-filters">
-                    {filters.map(({ value, label }) => (
-                        <button
-                            key={value}
-                            className={`filter-btn ${filter === value ? 'active' : ''}`}
-                            onClick={() => setFilter(value)}
-                        >
-                            {label}
-                        </button>
-                    ))}
+                    <button
+                        className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
+                        onClick={() => setFilter('all')}
+                    >
+                        All Projects
+                    </button>
+                    {categoriesLoading ? (
+                        <span style={{ color: 'var(--text-muted)' }}>Loading categories...</span>
+                    ) : (
+                        categories.map(category => (
+                            <button
+                                key={category.id}
+                                className={`filter-btn ${filter === category.id ? 'active' : ''}`}
+                                onClick={() => setFilter(category.id)}
+                            >
+                                {category.name}
+                            </button>
+                        ))
+                    )}
                 </div>
 
                 <div className="projects-grid">

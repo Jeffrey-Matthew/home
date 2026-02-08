@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import type { Project } from '../../types';
+import type { Project, Category } from '../../types';
 import './ProjectCard.css';
 
 interface ProjectCardProps {
@@ -7,21 +7,20 @@ interface ProjectCardProps {
 }
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
-    const getCategoryLabel = (category: string) => {
-        switch (category) {
-            case 'business': return 'Business Analysis';
-            case 'development': return 'Development';
-            case 'hybrid': return 'BA + Dev';
-            default: return category;
-        }
+    const getCategoryLabel = (category?: Category) => {
+        if (!category) return 'Uncategorized';
+        return category.name;
     };
 
-    const getCategoryColor = (category: string) => {
-        switch (category) {
+    const getCategoryColor = (category?: Category) => {
+        if (!category) return 'var(--text-muted)';
+
+        // Fallback colors based on slug if needed
+        switch (category.slug) {
             case 'business': return 'var(--accent-color)';
             case 'development': return 'var(--primary-color)';
             case 'hybrid': return '#8b5cf6';
-            default: return 'var(--text-muted)';
+            default: return 'var(--primary-color)'; // Default color for new categories
         }
     };
 
