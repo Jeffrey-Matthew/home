@@ -98,7 +98,8 @@
     padding: var(--space-4);
     /* Reduced padding for image */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    height: 100%;
+    min-height: 400px;
+    /* Ensure card has minimum height for flip container */
     display: flex;
     flex-direction: column;
 }
