@@ -96,8 +96,8 @@ export const About = () => {
                                 <div className="profile-flip-inner">
                                     <div className="profile-flip-front">
                                         <img
-                                            src="/profile.jpeg"
-                                            alt="Jeffrey Matthew"
+                                            src="/profile.png"
+                                            alt="Jeffrey Matthew Caricature"
                                             className="profile-image"
                                         />
                                         <div className="flip-hint">Click for inspiration ✨</div>
