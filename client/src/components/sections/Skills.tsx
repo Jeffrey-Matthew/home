@@ -46,8 +46,7 @@ export const Skills = () => {
                 <div className="skills-grid">
                     <div className="skills-category">
                         <div className="category-header">
-                            <span className="category-icon">📊</span>
-                            <h3>Business Analysis</h3>
+                            <span className="category-icon">📊 Business Analysis</span>
                         </div>
                         <div className="skills-list">
                             {businessSkills.map(skill => (
@@ -65,8 +64,8 @@ export const Skills = () => {
 
                     <div className="skills-category">
                         <div className="category-header">
-                            <span className="category-icon">⚡</span>
-                            <h3>Development</h3>
+                            <span className="category-icon">⚡ Development</span>
+
                         </div>
                         <div className="skills-list">
                             {techSkills.map(skill => (
