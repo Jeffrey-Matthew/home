@@ -1,4 +1,5 @@
 import type { Skill } from '../../types';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './Skills.css';
 
 const businessSkills: Skill[] = [
@@ -33,8 +34,10 @@ const getLevelColor = (level: string) => {
 };
 
 export const Skills = () => {
+    const { ref: skillsRef, isVisible: skillsVisible } = useScrollReveal();
+
     return (
-        <section className="skills">
+        <section className={`skills scroll-reveal ${skillsVisible ? 'revealed' : ''}`} ref={skillsRef as React.RefObject<HTMLElement>}>
             <div className="section-container">
                 <div className="skills-header">
                     <h2 className="section-title">Tools of the Trade</h2>

@@ -1,6 +1,5 @@
-import './About.css';
-
 import { useState } from 'react';
+import { useScrollReveal } from '../../hooks/useScrollReveal';
 import './About.css';
 
 const quotes = [
@@ -19,6 +18,7 @@ const quotes = [
 export const About = () => {
     const [isFlipped, setIsFlipped] = useState(false);
     const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+    const { ref: aboutRef, isVisible: aboutVisible } = useScrollReveal();
 
     const handleProfileClick = () => {
         if (!isFlipped) {
@@ -29,7 +29,7 @@ export const About = () => {
         setIsFlipped(!isFlipped);
     };
     return (
-        <section id="about" className="about">
+        <section id="about" className={`about scroll-reveal ${aboutVisible ? 'revealed' : ''}`} ref={aboutRef as React.RefObject<HTMLElement>}>
             <div className="section-container">
                 <div className="about-grid">
                     <div className="about-content">

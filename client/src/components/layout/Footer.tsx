@@ -20,7 +20,6 @@ export const Footer = () => {
 
                     <div className="footer-links">
                         <a href="/projects" className="footer-link">Projects</a>
-                        <a href="mailto:jeffenz3110@gmail.com" className="footer-link">Contact</a>
                         <div className="footer-socials">
                             {socialLinks.map(({ name, url, icon }) => (
                                 <a

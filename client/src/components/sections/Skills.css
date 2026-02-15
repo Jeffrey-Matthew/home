@@ -25,12 +25,18 @@
     border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: var(--space-8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: box-shadow var(--transition-base);
+}
+
+.skills-category:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .category-header {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: var(--space-1);
     margin-bottom: var(--space-6);
 }
 

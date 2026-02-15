@@ -16,7 +16,35 @@ export const Projects = () => {
         : projects.filter(p => p.category_id === filter);
 
     if (loading) {
-        return <div className="loading-page">Loading projects...</div>;
+        return (
+            <main className="projects-page">
+                <div className="section-container">
+                    <header className="projects-header">
+                        <div className="skeleton skeleton-title" style={{ margin: '0 auto var(--space-4)' }}></div>
+                        <div className="skeleton skeleton-line medium" style={{ margin: '0 auto' }}></div>
+                    </header>
+                    <div className="projects-filters">
+                        {[1, 2, 3, 4].map(i => (
+                            <div key={i} className="skeleton skeleton-badge"></div>
+                        ))}
+                    </div>
+                    <div className="projects-grid">
+                        {[1, 2, 3].map(i => (
+                            <div key={i} className="skeleton-card">
+                                <div className="skeleton skeleton-badge"></div>
+                                <div className="skeleton skeleton-title"></div>
+                                <div className="skeleton skeleton-line full"></div>
+                                <div className="skeleton skeleton-line medium"></div>
+                                <div style={{ display: 'flex', gap: '8px', marginTop: 'auto' }}>
+                                    <div className="skeleton skeleton-badge"></div>
+                                    <div className="skeleton skeleton-badge"></div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </main>
+        );
     }
 
     return (
