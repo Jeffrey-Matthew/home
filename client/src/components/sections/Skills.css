@@ -36,12 +36,13 @@
 .category-header {
     display: flex;
     align-items: center;
-    gap: var(--space-1);
+    gap: 4px;
     margin-bottom: var(--space-6);
 }
 
 .category-icon {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 1;
 }
 
 .category-header h3 {

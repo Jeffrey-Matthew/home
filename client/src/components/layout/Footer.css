@@ -41,9 +41,10 @@
 
 .footer-socials {
     display: flex;
-    gap: var(--space-4);
-    margin-left: var(--space-6);
-    padding-left: var(--space-6);
+    align-items: center;
+    gap: var(--space-3);
+    margin-left: var(--space-3);
+    padding-left: var(--space-3);
     border-left: 1px solid var(--border-color);
 }
 
@@ -61,7 +62,7 @@
 .footer-links {
     display: flex;
     align-items: center;
-    gap: var(--space-6);
+    gap: var(--space-3);
 }
 
 .social-link {
